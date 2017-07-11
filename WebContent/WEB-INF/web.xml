@@ -13,62 +13,62 @@
 	</welcome-file-list>
 	<servlet>
 		<description></description>
-		<display-name>IndexServlet</display-name>
-		<servlet-name>IndexServlet</servlet-name>
-		<servlet-class>com.sundar.student.servlet.IndexServlet</servlet-class>
+		<display-name>IndexStudentServlet</display-name>
+		<servlet-name>IndexStudentServlet</servlet-name>
+		<servlet-class>com.sundar.student.servlet.IndexStudentServlet</servlet-class>
 	</servlet>
 	<servlet-mapping>
-		<servlet-name>IndexServlet</servlet-name>
+		<servlet-name>IndexStudentServlet</servlet-name>
 		<url-pattern>/index</url-pattern>
 	</servlet-mapping>
 	<servlet>
 		<description></description>
-		<display-name>ViewServlet</display-name>
-		<servlet-name>ViewServlet</servlet-name>
-		<servlet-class>com.sundar.student.servlet.ViewServlet</servlet-class>
+		<display-name>ViewStudentServlet</display-name>
+		<servlet-name>ViewStudentServlet</servlet-name>
+		<servlet-class>com.sundar.student.servlet.ViewStudentServlet</servlet-class>
 	</servlet>
 	<servlet-mapping>
-		<servlet-name>ViewServlet</servlet-name>
-		<url-pattern>/read</url-pattern>
+		<servlet-name>ViewStudentServlet</servlet-name>
+		<url-pattern>/viewStudent</url-pattern>
 	</servlet-mapping>
 	<servlet>
 		<description></description>
-		<display-name>EditServlet</display-name>
-		<servlet-name>EditServlet</servlet-name>
-		<servlet-class>com.sundar.student.servlet.EditServlet</servlet-class>
+		<display-name>EditStudentServlet</display-name>
+		<servlet-name>EditStudentServlet</servlet-name>
+		<servlet-class>com.sundar.student.servlet.EditStudentServlet</servlet-class>
 	</servlet>
 	<servlet-mapping>
-		<servlet-name>EditServlet</servlet-name>
-		<url-pattern>/edit</url-pattern>
+		<servlet-name>EditStudentServlet</servlet-name>
+		<url-pattern>/editStudent</url-pattern>
 	</servlet-mapping>
 	<servlet>
 		<description></description>
-		<display-name>UpdateServlet</display-name>
-		<servlet-name>UpdateServlet</servlet-name>
-		<servlet-class>com.sundar.student.servlet.UpdateServlet</servlet-class>
+		<display-name>UpdateStudentServlet</display-name>
+		<servlet-name>UpdateStudentServlet</servlet-name>
+		<servlet-class>com.sundar.student.servlet.UpdateStudentServlet</servlet-class>
 	</servlet>
 	<servlet-mapping>
-		<servlet-name>UpdateServlet</servlet-name>
-		<url-pattern>/edit1</url-pattern>
+		<servlet-name>UpdateStudentServlet</servlet-name>
+		<url-pattern>/updateStudent</url-pattern>
 	</servlet-mapping>
 	<servlet>
 		<description></description>
-		<display-name>CreateServlet</display-name>
-		<servlet-name>CreateServlet</servlet-name>
-		<servlet-class>com.sundar.student.servlet.CreateServlet</servlet-class>
+		<display-name>CreateStudentServlet</display-name>
+		<servlet-name>CreateStudentServlet</servlet-name>
+		<servlet-class>com.sundar.student.servlet.CreateStudentServlet</servlet-class>
 	</servlet>
 	<servlet-mapping>
-		<servlet-name>CreateServlet</servlet-name>
-		<url-pattern>/insert</url-pattern>
+		<servlet-name>CreateStudentServlet</servlet-name>
+		<url-pattern>/createStudent</url-pattern>
 	</servlet-mapping>
 	<servlet>
 		<description></description>
-		<display-name>DeleteServlet</display-name>
-		<servlet-name>DeleteServlet</servlet-name>
-		<servlet-class>com.sundar.student.servlet.DeleteServlet</servlet-class>
+		<display-name>DeleteStudentServlet</display-name>
+		<servlet-name>DeleteStudentServlet</servlet-name>
+		<servlet-class>com.sundar.student.servlet.DeleteStudentServlet</servlet-class>
 	</servlet>
 	<servlet-mapping>
-		<servlet-name>DeleteServlet</servlet-name>
-		<url-pattern>/delete</url-pattern>
+		<servlet-name>DeleteStudentServlet</servlet-name>
+		<url-pattern>/deleteStudent</url-pattern>
 	</servlet-mapping>
 </web-app>

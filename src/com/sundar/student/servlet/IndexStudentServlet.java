@@ -15,15 +15,15 @@ import com.sundar.student.dao.StudentVO;
 import com.sundar.student.service.StudentService;
 
 /**
- * Servlet implementation class IndexServlet
+ * Servlet implementation class IndexStudentServlet
  */
-public class IndexServlet extends HttpServlet {
+public class IndexStudentServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public IndexServlet() {
+    public IndexStudentServlet() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -36,7 +36,7 @@ public class IndexServlet extends HttpServlet {
 			PrintWriter out = response.getWriter();	
 			try{
 				StudentService s=new StudentService();
-			List<StudentVO> li=s.select();
+			List<StudentVO> li=s.getAllStudents();
 			request.setAttribute("studentList",li);
 			}catch (Exception e){System.out.println(e);}
 			out.println("hi");			

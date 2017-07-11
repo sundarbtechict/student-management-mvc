@@ -8,29 +8,29 @@ import com.sundar.student.dao.StudentVO;
 public class StudentService {
 	
 
-	public  void insert(StudentVO st)
+	public  void createStudent(StudentVO studentVO)
 	{
-		StudentDAO s=new StudentDAO();
-		s.insert(st);
+		StudentDAO studentDAO=new StudentDAO();
+		studentDAO.createStudent(studentVO);
 	}
-	public  StudentVO read(String regno)
+	public  StudentVO getStudentById(String regno)
 	{
-		StudentDAO s=new StudentDAO();
-		StudentVO st=s.read(regno);
-		return st;
+		StudentDAO studentDAO=new StudentDAO();
+		StudentVO studentVO=studentDAO.getStudentById(regno);
+		return studentVO;
 		
 	}
-	public  void update(StudentVO st){
-		StudentDAO s=new StudentDAO();
-		s.update(st);
+	public  void updateStudent(StudentVO studentVO){
+		StudentDAO studentDAO=new StudentDAO();
+		studentDAO.updateStudent(studentVO);
 	}
-	public  void delete(String regno){
-		StudentDAO s=new StudentDAO();
-		s.delete(regno);
+	public  void deleteStudent(String regno){
+		StudentDAO studentDAO=new StudentDAO();
+		studentDAO.deleteStudent(regno);
 	}
-	public  List<StudentVO> select() throws Exception{
-		StudentDAO s=new StudentDAO();
-		List<StudentVO> li=s.select();
-		return li;
+	public  List<StudentVO> getAllStudents() throws Exception{
+		StudentDAO studentDAO=new StudentDAO();
+		List<StudentVO> list=studentDAO.getAllStudents();
+		return list;
 	}
 }

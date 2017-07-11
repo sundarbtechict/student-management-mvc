@@ -8,9 +8,9 @@ public class DBUtil {
 	public static final String pass = "";
 
 	public static Connection getConnection() throws Exception {
-		Connection c;
+		Connection connection;
 		Class.forName("com.mysql.jdbc.Driver");
-		c = DriverManager.getConnection(url, user, pass);
-		return c;
+		connection = DriverManager.getConnection(url, user, pass);
+		return connection;
 	}
 	}

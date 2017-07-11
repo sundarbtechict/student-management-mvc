@@ -13,15 +13,15 @@ import com.sundar.student.service.StudentService;
 
 
 /**
- * Servlet implementation class ViewServlet
+ * Servlet implementation class ViewStudentServlet
  */
-public class ViewServlet extends HttpServlet {
+public class ViewStudentServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public ViewServlet() {
+    public ViewStudentServlet() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -35,7 +35,7 @@ public class ViewServlet extends HttpServlet {
 		System.out.println(regno);
 		try{
 			StudentService s=new StudentService();
-		StudentVO st=s.read(regno);
+		StudentVO st=s.getStudentById(regno);
 		if(st.isF())
 		{
 		request.setAttribute("std",st);

@@ -20,7 +20,7 @@
 	<br><br>
   <div class="container">
 <h4 style='color:#000080;' >Enter your full details:</h4>
-	<form class="form-inline" action="./insert" method="POST">
+	<form class="form-inline" action="./createStudent" method="POST">
 		<table class="table table-striped">
 			<tr>
 				<th>Name:</th>

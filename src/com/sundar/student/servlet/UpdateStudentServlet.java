@@ -6,18 +6,19 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.sundar.student.dao.StudentVO;
 import com.sundar.student.service.StudentService;
 
 /**
- * Servlet implementation class DeleteServlet
+ * Servlet implementation class UpdateStudentServlet
  */
-public class DeleteServlet extends HttpServlet {
+public class UpdateStudentServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public DeleteServlet() {
+    public UpdateStudentServlet() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -27,14 +28,7 @@ public class DeleteServlet extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		String regno = request.getParameter("regno");
-		System.out.println(regno);
-		try{
-			StudentService s=new StudentService();
-			s.delete(regno);
-		}catch (Exception e){System.out.println(e);}
-		response.sendRedirect("./././index");
-
+		response.getWriter().append("Served at: ").append(request.getContextPath());
 	}
 
 	/**
@@ -42,6 +36,18 @@ public class DeleteServlet extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
+		StudentVO st=new StudentVO();
+		st.setName(request.getParameter("name"));
+		st.setRegNo(request.getParameter("regno"));
+		st.setDob(request.getParameter("dob"));
+		st.setEmail(request.getParameter("email"));
+		st.setMobile(request.getParameter("mobile"));
+		st.setDept(request.getParameter("dept"));
+		try{
+			StudentService s=new StudentService();
+			s.updateStudent(st);
+		}catch (Exception e){System.out.println(e);}
+		response.sendRedirect("./././index");
 		doGet(request, response);
 	}
 

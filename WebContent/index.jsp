@@ -45,9 +45,9 @@
 				<td><c:out value="${st.getDept()}"></c:out></td>
 				<td><c:out value="${st.getEmail()}"></c:out></td>
 				<td><c:out value="${st.getMobile()}"></c:out></td>
-				<td><a href="./read?regno=<c:out value="${st.getRegNo()}"></c:out>">View</a></td>
-				<td><a href="./edit?regno=<c:out value="${st.getRegNo()}"></c:out>">Edit</a></td>
-				<td><a href="./delete?regno=<c:out value="${st.getRegNo()}"></c:out>">Delete</a></td>
+				<td><a href="./viewStudent?regno=<c:out value="${st.getRegNo()}"></c:out>">View</a></td>
+				<td><a href="./editStudent?regno=<c:out value="${st.getRegNo()}"></c:out>">Edit</a></td>
+				<td><a href="./deleteStudent?regno=<c:out value="${st.getRegNo()}"></c:out>">Delete</a></td>
 			</tr>
 			</c:forEach>
 			

@@ -22,7 +22,7 @@
 	</nav>
 	<br><br>
 	<div class="container">
-	<form class="form-inline" action="./edit1" method="POST">
+	<form class="form-inline" action="./updateStudent" method="POST">
 		<table class="table table-striped">
 			<tr>
 				<th>Register no:</th>

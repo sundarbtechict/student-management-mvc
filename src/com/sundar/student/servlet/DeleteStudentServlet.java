@@ -1,27 +1,23 @@
 package com.sundar.student.servlet;
 
 import java.io.IOException;
-
-import javax.servlet.RequestDispatcher;
-import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.sundar.student.dao.StudentVO;
 import com.sundar.student.service.StudentService;
 
 /**
- * Servlet implementation class EditServlet
+ * Servlet implementation class DeleteStudentServlet
  */
-public class EditServlet extends HttpServlet {
+public class DeleteStudentServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public EditServlet() {
+    public DeleteStudentServlet() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -35,19 +31,11 @@ public class EditServlet extends HttpServlet {
 		System.out.println(regno);
 		try{
 			StudentService s=new StudentService();
-			StudentVO st=s.read(regno);
-			if(st.isF())
-			{
-			request.setAttribute("st",st);
-			}
-			}catch (Exception e){System.out.println(e);}
-			ServletContext context= getServletContext();
-			RequestDispatcher rd= context.getRequestDispatcher("/updateStudent.jsp");
-			rd.forward(request, response);
+			s.deleteStudent(regno);
+		}catch (Exception e){System.out.println(e);}
+		response.sendRedirect("./././index");
 
 	}
-
-
 
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
