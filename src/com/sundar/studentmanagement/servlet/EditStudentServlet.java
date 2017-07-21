@@ -1,6 +1,8 @@
-package com.sundar.student.servlet;
+package com.sundar.studentmanagement.servlet;
 
 import java.io.IOException;
+import java.util.Map;
+
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
@@ -8,20 +10,20 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.sundar.student.dao.StudentVO;
-import com.sundar.student.service.StudentService;
-
+import com.sundar.studentmanagement.vo.StatusVO;
+import com.sundar.studentmanagement.vo.StudentVO;
+import com.sundar.studentmanagement.service.StudentServiceImpl;
 
 /**
- * Servlet implementation class ViewStudentServlet
+ * Servlet implementation class EditStudentServlet
  */
-public class ViewStudentServlet extends HttpServlet {
+public class EditStudentServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public ViewStudentServlet() {
+    public EditStudentServlet() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -33,29 +35,27 @@ public class ViewStudentServlet extends HttpServlet {
 		// TODO Auto-generated method stub
 		String regno = request.getParameter("regno");
 		System.out.println(regno);
-		try{
-			StudentService s=new StudentService();
-		StudentVO st=s.getStudentById(regno);
-		if(st.isF())
-		{
-		request.setAttribute("std",st);
-		System.out.println(" hi");
-		}
-		}catch (Exception e){System.out.println(e);}
-		ServletContext context= getServletContext();
-		RequestDispatcher rd= context.getRequestDispatcher("/viewStudent.jsp");
-		System.out.println(" hi");
-		rd.forward(request, response);
-		
+		StudentServiceImpl s=StudentServiceImpl.getStudentService();
+		Map<String, Object> map = s.getStudentById(regno);
+			StudentVO studentVO=(StudentVO) map.get("StudentVO");
+			StatusVO statusVO=(StatusVO) map.get("StatusVO");
+			if (studentVO.isF()) {
+				request.setAttribute("student", studentVO);
+				request.setAttribute("status", statusVO);
+			}
+			ServletContext context= getServletContext();
+			RequestDispatcher rd= context.getRequestDispatcher("/updateStudent.jsp");
+			rd.forward(request, response);
+
 	}
-		
+
+
+
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-				
-
 		doGet(request, response);
 	}
 

@@ -1,12 +1,16 @@
-package com.sundar.student.servlet;
+package com.sundar.studentmanagement.servlet;
 
 import java.io.IOException;
+
+import javax.servlet.RequestDispatcher;
+import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.sundar.student.service.StudentService;
+import com.sundar.studentmanagement.service.StudentServiceImpl;
+import com.sundar.studentmanagement.vo.StatusVO;
 
 /**
  * Servlet implementation class DeleteStudentServlet
@@ -29,11 +33,12 @@ public class DeleteStudentServlet extends HttpServlet {
 		// TODO Auto-generated method stub
 		String regno = request.getParameter("regno");
 		System.out.println(regno);
-		try{
-			StudentService s=new StudentService();
-			s.deleteStudent(regno);
-		}catch (Exception e){System.out.println(e);}
-		response.sendRedirect("./././index");
+			StudentServiceImpl s=StudentServiceImpl.getStudentService();
+			StatusVO statusVO=s.deleteStudent(regno);
+			request.setAttribute("status", statusVO);
+			ServletContext context= getServletContext();
+			RequestDispatcher rd= context.getRequestDispatcher("/index");
+			rd.forward(request, response);
 
 	}
 

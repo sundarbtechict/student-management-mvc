@@ -1,4 +1,4 @@
-package com.sundar.student.dao;
+package com.sundar.studentmanagement.vo;
 
 
 public class StudentVO 

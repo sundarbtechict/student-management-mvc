@@ -15,7 +15,7 @@
 		<description></description>
 		<display-name>IndexStudentServlet</display-name>
 		<servlet-name>IndexStudentServlet</servlet-name>
-		<servlet-class>com.sundar.student.servlet.IndexStudentServlet</servlet-class>
+		<servlet-class>com.sundar.studentmanagement.servlet.IndexStudentServlet</servlet-class>
 	</servlet>
 	<servlet-mapping>
 		<servlet-name>IndexStudentServlet</servlet-name>
@@ -25,7 +25,7 @@
 		<description></description>
 		<display-name>ViewStudentServlet</display-name>
 		<servlet-name>ViewStudentServlet</servlet-name>
-		<servlet-class>com.sundar.student.servlet.ViewStudentServlet</servlet-class>
+		<servlet-class>com.sundar.studentmanagement.servlet.ViewStudentServlet</servlet-class>
 	</servlet>
 	<servlet-mapping>
 		<servlet-name>ViewStudentServlet</servlet-name>
@@ -35,7 +35,7 @@
 		<description></description>
 		<display-name>EditStudentServlet</display-name>
 		<servlet-name>EditStudentServlet</servlet-name>
-		<servlet-class>com.sundar.student.servlet.EditStudentServlet</servlet-class>
+		<servlet-class>com.sundar.studentmanagement.servlet.EditStudentServlet</servlet-class>
 	</servlet>
 	<servlet-mapping>
 		<servlet-name>EditStudentServlet</servlet-name>
@@ -45,7 +45,7 @@
 		<description></description>
 		<display-name>UpdateStudentServlet</display-name>
 		<servlet-name>UpdateStudentServlet</servlet-name>
-		<servlet-class>com.sundar.student.servlet.UpdateStudentServlet</servlet-class>
+		<servlet-class>com.sundar.studentmanagement.servlet.UpdateStudentServlet</servlet-class>
 	</servlet>
 	<servlet-mapping>
 		<servlet-name>UpdateStudentServlet</servlet-name>
@@ -55,7 +55,7 @@
 		<description></description>
 		<display-name>CreateStudentServlet</display-name>
 		<servlet-name>CreateStudentServlet</servlet-name>
-		<servlet-class>com.sundar.student.servlet.CreateStudentServlet</servlet-class>
+		<servlet-class>com.sundar.studentmanagement.servlet.CreateStudentServlet</servlet-class>
 	</servlet>
 	<servlet-mapping>
 		<servlet-name>CreateStudentServlet</servlet-name>
@@ -65,7 +65,7 @@
 		<description></description>
 		<display-name>DeleteStudentServlet</display-name>
 		<servlet-name>DeleteStudentServlet</servlet-name>
-		<servlet-class>com.sundar.student.servlet.DeleteStudentServlet</servlet-class>
+		<servlet-class>com.sundar.studentmanagement.servlet.DeleteStudentServlet</servlet-class>
 	</servlet>
 	<servlet-mapping>
 		<servlet-name>DeleteStudentServlet</servlet-name>

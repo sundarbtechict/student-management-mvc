@@ -1,13 +1,17 @@
-package com.sundar.student.servlet;
+package com.sundar.studentmanagement.servlet;
 
 import java.io.IOException;
+
+import javax.servlet.RequestDispatcher;
+import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.sundar.student.dao.StudentVO;
-import com.sundar.student.service.StudentService;
+import com.sundar.studentmanagement.vo.StatusVO;
+import com.sundar.studentmanagement.vo.StudentVO;
+import com.sundar.studentmanagement.service.StudentServiceImpl;
 
 /**
  * Servlet implementation class UpdateStudentServlet
@@ -43,11 +47,12 @@ public class UpdateStudentServlet extends HttpServlet {
 		st.setEmail(request.getParameter("email"));
 		st.setMobile(request.getParameter("mobile"));
 		st.setDept(request.getParameter("dept"));
-		try{
-			StudentService s=new StudentService();
-			s.updateStudent(st);
-		}catch (Exception e){System.out.println(e);}
-		response.sendRedirect("./././index");
+			StudentServiceImpl s=StudentServiceImpl.getStudentService();
+			StatusVO statusVO=s.updateStudent(st);
+			request.setAttribute("status", statusVO);
+			ServletContext context= getServletContext();
+			RequestDispatcher rd= context.getRequestDispatcher("/index");
+			rd.forward(request, response);
 		doGet(request, response);
 	}
 

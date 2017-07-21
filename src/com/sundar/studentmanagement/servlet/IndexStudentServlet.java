@@ -1,8 +1,9 @@
-package com.sundar.student.servlet;
+package com.sundar.studentmanagement.servlet;
 
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.List;
+import java.util.Map;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletContext;
@@ -11,8 +12,9 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.sundar.student.dao.StudentVO;
-import com.sundar.student.service.StudentService;
+import com.sundar.studentmanagement.vo.StatusVO;
+import com.sundar.studentmanagement.vo.StudentVO;
+import com.sundar.studentmanagement.service.StudentServiceImpl;
 
 /**
  * Servlet implementation class IndexStudentServlet
@@ -33,12 +35,20 @@ public class IndexStudentServlet extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-			PrintWriter out = response.getWriter();	
-			try{
-				StudentService s=new StudentService();
-			List<StudentVO> li=s.getAllStudents();
-			request.setAttribute("studentList",li);
-			}catch (Exception e){System.out.println(e);}
+			PrintWriter out = response.getWriter();
+			StudentServiceImpl s=StudentServiceImpl.getStudentService();
+			Map<String,Object> map=s.getAllStudents();
+				@SuppressWarnings("unchecked")
+				List<StudentVO> studentList=(List<StudentVO>) map.get("StudentList");
+				StatusVO statusVO=(StatusVO) map.get("StatusVO");
+				request.setAttribute("studentList",studentList);
+				if(statusVO.getStatusCode() =="Problems")
+					request.setAttribute("status",statusVO);
+				else
+				{
+					StatusVO statusVO2=(StatusVO)request.getAttribute("status");
+					request.setAttribute("status",statusVO2);
+				}
 			out.println("hi");			
 			ServletContext context= getServletContext();
 			RequestDispatcher rd= context.getRequestDispatcher("/././index.jsp");
